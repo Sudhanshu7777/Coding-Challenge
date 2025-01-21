@@ -1,0 +1,17 @@
+class Solution:
+    # @param A : list of integers
+    # @return a list of integers
+    def solve(self, A):
+        # Initialize counts
+        positive_count = 0
+        negative_count = 0
+
+        # Count positive and negative integers
+        for num in A:
+            if num > 0:
+                positive_count += 1
+            elif num < 0:
+                negative_count += 1
+
+        # Return the result as a list
+        return [positive_count, negative_count]
