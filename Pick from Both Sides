@@ -1,0 +1,15 @@
+class Solution:
+    # @param A : list of integers
+    # @param B : integer
+    # @return an integer
+    def solve(self, A, B):
+        # Calculate the sum of the first B elements from the left
+        left_sum = sum(A[:B])
+        max_sum = left_sum
+
+        # Sliding window: Replace elements from the left with elements from the right
+        for i in range(1, B + 1):
+            left_sum = left_sum - A[B - i] + A[-i]
+            max_sum = max(max_sum, left_sum)
+
+        return max_sum
