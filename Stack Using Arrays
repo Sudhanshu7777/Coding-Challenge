@@ -1,0 +1,43 @@
+class Stack:
+    def __init__(self, max_size):
+        """Initialize stack with a maximum size"""
+        self.stack = []
+        self.max_size = max_size
+
+    def push(self, value):
+        """Push an integer onto the stack if it's not full"""
+        if len(self.stack) < self.max_size:
+            self.stack.append(value)
+        else:
+            print("stack overflow")
+
+    def pop(self):
+        """Pop the top element from the stack and print it"""
+        if self.stack:
+            print(self.stack.pop())
+        else:
+            print("stack underflow")
+
+    def top(self):
+        """Print the top element without removing it"""
+        if self.stack:
+            print(self.stack[-1])
+        else:
+            print("stack underflow")
+
+t = int(input().strip())
+
+for _ in range(t):
+    
+    n, s = map(int, input().strip().split())
+    
+    stack = Stack(s)
+    
+    for _ in range(n):
+        command = input().strip().split()
+        if command[0] == "push":
+            stack.push(int(command[1]))
+        elif command[0] == "pop":
+            stack.pop()
+        elif command[0] == "top":
+            stack.top()
