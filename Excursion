@@ -1,0 +1,10 @@
+def min_rooms(N, M, K):
+    
+    rooms_for_boys = (N + K - 1) // K  
+    rooms_for_girls = (M + K - 1) // K  
+    return rooms_for_boys + rooms_for_girls
+T = int(input().strip())
+
+for _ in range(T):
+    N, M, K = map(int, input().strip().split())
+    print(min_rooms(N, M, K))
