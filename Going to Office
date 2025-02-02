@@ -1,0 +1,20 @@
+def choose_taxi(D, A, B, C, F, G, H, V):
+   
+    if D <= B:
+        online_cost = A
+    else:
+        online_cost = A + (D - B) * C
+
+    time_spent = D / V  
+    classic_cost = F + (G * time_spent) + (H * D)
+
+    if online_cost <= classic_cost:
+        print("Online Taxi")
+    else:
+        print("Classic Taxi")
+
+D = int(input().strip())
+A, B, C = map(int, input().strip().split())
+F, G, H, V = map(int, input().strip().split())
+
+choose_taxi(D, A, B, C, F, G, H, V)
