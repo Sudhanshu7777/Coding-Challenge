@@ -1,0 +1,8 @@
+def sum_of_absolute_values(N):
+    return N * (N + 1)
+
+T = int(input().strip())
+
+for _ in range(T):
+    N = int(input().strip())
+    print(sum_of_absolute_values(N))
