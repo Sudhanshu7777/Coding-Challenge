@@ -1,0 +1,11 @@
+def is_mathematically_beautiful(x, k):
+    while x > 0:
+        if x % k > 1:  
+            return "NO"
+        x //= k
+    return "YES"
+
+T = int(input())  
+for _ in range(T):
+    x, k = map(int, input().split())  
+    print(is_mathematically_beautiful(x, k))
