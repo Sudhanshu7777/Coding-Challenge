@@ -1,0 +1,20 @@
+def find_index_difference_sum(arr):
+    index_map = {}
+    
+    for i, num in enumerate(arr):
+        if num not in index_map:
+            index_map[num] = [i, i]  
+        else:
+            index_map[num][1] = i  
+    
+    total_difference = sum(last - first for first, last in index_map.values())
+    
+    return total_difference
+
+T = int(input())  
+
+for _ in range(T):
+    x = int(input())  # Number of elements in the array
+    arr = list(map(int, input().split()))  
+    
+    print(find_index_difference_sum(arr))
