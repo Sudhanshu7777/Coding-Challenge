@@ -1,0 +1,9 @@
+class Solution:
+    def intersection(self, nums):
+        
+        common_elements = set(nums[0])
+
+        for sublist in nums[1:]:
+            common_elements &= set(sublist)  
+    
+        return sorted(common_elements)
